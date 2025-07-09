@@ -1,0 +1,49 @@
+CRITICAL - 2025-05-22 08:01:51 --> ErrorException: Cannot redeclare App\Controllers\Artikel::admin_index()
+[Method: GET, Route: artikel]
+in APPPATH\Controllers\Artikel.php on line 88.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-05-22 08:02:17 --> ErrorException: Cannot redeclare App\Controllers\Artikel::admin_index()
+[Method: GET, Route: artikel]
+in APPPATH\Controllers\Artikel.php on line 88.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-05-22 08:02:18 --> ErrorException: Cannot redeclare App\Controllers\Artikel::admin_index()
+[Method: GET, Route: artikel]
+in APPPATH\Controllers\Artikel.php on line 88.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-05-22 08:05:41 --> ErrorException: Cannot redeclare App\Controllers\Artikel::admin_index()
+[Method: GET, Route: artikel]
+in APPPATH\Controllers\Artikel.php on line 88.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-05-22 08:05:42 --> ErrorException: Cannot redeclare App\Controllers\Artikel::admin_index()
+[Method: GET, Route: artikel]
+in APPPATH\Controllers\Artikel.php on line 88.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-05-22 08:06:22 --> ParseError: syntax error, unexpected token "<", expecting "function" or "const"
+[Method: GET, Route: artikel]
+in APPPATH\Controllers\Artikel.php on line 100.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\lab7_php_ci\\app\\Controllers\\Artikel.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Artikel')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Artikel')
+ 4 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\Artikel', true)
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\lab7_php_ci\\public\\index.php')
+CRITICAL - 2025-05-22 08:07:04 --> ErrorException: Cannot redeclare App\Controllers\Artikel::admin_index()
+[Method: GET, Route: artikel]
+in APPPATH\Controllers\Artikel.php on line 88.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-05-22 08:07:05 --> ErrorException: Cannot redeclare App\Controllers\Artikel::admin_index()
+[Method: GET, Route: artikel]
+in APPPATH\Controllers\Artikel.php on line 88.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-05-22 08:07:06 --> ErrorException: Cannot redeclare App\Controllers\Artikel::admin_index()
+[Method: GET, Route: artikel]
+in APPPATH\Controllers\Artikel.php on line 88.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-05-22 08:08:37 --> ErrorException: Cannot redeclare App\Controllers\Artikel::admin_index()
+[Method: GET, Route: artikel]
+in APPPATH\Controllers\Artikel.php on line 88.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()

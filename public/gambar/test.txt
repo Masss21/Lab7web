@@ -1,0 +1,5 @@
+# Coba buat file test
+echo "test" > public/gambar/test.txt
+
+# Hapus file test setelahnya
+rm public/gambar/test.txt

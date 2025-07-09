@@ -1,0 +1,10 @@
+perubahan saat ini
+tamabhan field di tabel artikel "create_at dan update_at"
+file form_add.php diubah menjadi add.php begitu pula dengan form_edit menjadi edit.php
+penambahan controller save_artikel() untuk menyimpan artikel ke daatabase lewat add.php 
+penambahan tab pagenation di index dan di admin . "index.php, admin_index.php, artikel_model.php"
+perubahan di app/config/pager.php "'page_admin_artikel' => 'pagination/page_admin_artikel',"
+penambahan file di C:\xampp\htdocs\lab7_php_ci\app\Views\pagination page_admin_artikel.php dan ada penambahan difile cssnya
+penambahan tombol login admin di laman index 
+penambahan tombol kembali di index, pencarian diadmin dan di tambah artikel baru
+

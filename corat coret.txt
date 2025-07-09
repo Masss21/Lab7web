@@ -1,0 +1,21 @@
+terdapat masalah saat ingin masuk ke localhost/artikel setelah per6
+
+buka controller/artikel.php pada method index()
+before : $artikel = $model->findAll();     
+after : $artikel = $model->select('id, judul, isi, slug, gambar')->findAll();
+
+
+penambahan tabel kategori:
+INSERT INTO kategori (nama_kategori, slug_kategori) VALUES
+('Deskriptif', 'deskriptif'),
+('Eksplanasi', 'eksplanasi');
+
+UPDATE artikel SET id_kategori = 2 WHERE id = 3; 
+UPDATE artikel SET id_kategori = 3 WHERE id = 4; 
+
+baru sampai tahap 5
+
+ALTER TABLE artikel
+CHANGE COLUMN `Id_kategori` `id_kategori` INT(11), 
+CHANGE COLUMN `Nama_kategori` `nama_kategori` VARCHAR(200),
+CHANGE COLUMN `Slug` `slug` VARCHAR(200);
