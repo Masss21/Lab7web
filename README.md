@@ -1,4 +1,5 @@
 Struktur database Project Artikel
+
 Table Artikel
 
 CREATE TABLE artikel (
