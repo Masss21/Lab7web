@@ -28,14 +28,13 @@ $routes->get('/faqs', 'Page::faqs');*
 
 
 2. Aktifkan Ekstensi PHP di XAMPP
-
 Buka:
 **XAMPP → Apache → Config → PHP.ini**
 
 Hilangkan tanda:
 
-*;extension=mysqli
-;extension=intl*
+'''*;extension=mysqli
+;extension=intl*'''
 
 3. 🛠️ Mode Development
 
@@ -65,3 +64,4 @@ class Page extends BaseController
     public function contact() { echo "Ini halaman Contact"; }
     public function faqs() { echo "Ini halaman FAQ"; }
 }
+
