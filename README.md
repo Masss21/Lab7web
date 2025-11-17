@@ -1,4 +1,4 @@
-Praktikum I – PHP Framework (CodeIgniter 4)
+# Praktikum I – PHP Framework (CodeIgniter 4)
 📌 Persiapan
 
 Install XAMPP dan CodeIgniter 4
@@ -10,8 +10,8 @@ C:/xampp/htdocs/lab7_php_ci
 
 Ekstrak CodeIgniter ke dalam folder tersebut
 
-📌 Pengaturan Dasar CodeIgniter 4
-1. Mengatur Routes
+## Pengaturan Dasar CodeIgniter 4
+## 1. Mengatur Routes
 
 Edit file:
 
@@ -363,3 +363,4 @@ Relasi Kategori
 AJAX CRUD
 
 Seluruh langkah mengikuti alur praktikum sesuai instruksi.
+
