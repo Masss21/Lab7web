@@ -21,10 +21,12 @@ File:
 **app/Config/Routes.php**
 
 Tambahkan:
-*$routes->get('/', 'Home::index');
+'''ini
+$routes->get('/', 'Home::index');
 $routes->get('/about', 'Page::about');
 $routes->get('/contact', 'Page::contact');
-$routes->get('/faqs', 'Page::faqs');*
+$routes->get('/faqs', 'Page::faqs');
+'''
 
 
 2. Aktifkan Ekstensi PHP di XAMPP
@@ -66,6 +68,7 @@ class Page extends BaseController
     public function contact() { echo "Ini halaman Contact"; }
     public function faqs() { echo "Ini halaman FAQ"; }
 }
+
 
 
 
