@@ -27,6 +27,29 @@ $routes->get('/about', 'Page::about');
 $routes->get('/contact', 'Page::contact');
 $routes->get('/faqs', 'Page::faqs');
 
+### 🧩 2. Aktifkan Ekstensi PHP di XAMPP
+
+Buka file konfigurasi `PHP.ini` melalui menu XAMPP:
+
+> XAMPP → Apache → Config → PHP.ini
+
+Hilangkan tanda komentar (`;`) pada baris berikut untuk mengaktifkan ekstensi:
+
+```ini
+extension=mysqli
+extension=intl
+
+### 🛠️ 3. Mode Development
+
+Buka file pengaturan lingkungan (`.env`):
+
+**File:** `.env`
+
+Ubah variabel lingkungan `CI_ENVIRONMENT` dari `production` menjadi `development`:
+
+```ini
+CI_ENVIRONMENT = development
+
 
 
 
