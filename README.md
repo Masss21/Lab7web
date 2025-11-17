@@ -1,10 +1,10 @@
 🚀 Praktikum I – PHP Framework (CodeIgniter 4)
 
-Praktikum CodeIgniter 4 ini berisi langkah-langkah dasar hingga lanjutan dalam membangun aplikasi menggunakan PHP Framework CodeIgniter 4, seperti routing, controller, view, CRUD, login, upload gambar, relasi tabel, hingga AJAX.
+Praktikum ini membahas dasar hingga lanjutan CodeIgniter 4, mulai dari instalasi, routing, controller, view, CRUD, login, upload gambar, relasi database, hingga AJAX CRUD.
 
 📦 Persiapan
 Langkah	Keterangan
 Install XAMPP	Untuk Apache & MySQL
 Install CodeIgniter 4	Framework utama
 Buat folder proyek	C:/xampp/htdocs/lab7_php_ci
-Ekstrak CI4	Ke dalam folder proyek
+Ekstrak CI4	Masukkan ke dalam folder proyek
