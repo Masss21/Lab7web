@@ -25,9 +25,9 @@ $routes->get('/', 'Home::index');
 $routes->get('/about', 'Page::about');
 $routes->get('/contact', 'Page::contact');
 $routes->get('/faqs', 'Page::faqs');
-'''
 
-### 🧩 2. Aktifkan Ekstensi PHP di XAMPP
+
+2. Aktifkan Ekstensi PHP di XAMPP
 
 Buka file konfigurasi `PHP.ini` melalui menu XAMPP:
 
@@ -57,6 +57,7 @@ Hilangkan tanda komentar (;) pada baris berikut untuk mengaktifkan ekstensi:
 ini
 extension=mysqli
 extension=intl
+
 
 
 
