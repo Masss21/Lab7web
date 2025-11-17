@@ -14,8 +14,7 @@ Langkah	Keterangan
 | Ekstrak CI4           | Letakkan di dalam folder proyek  |
 
 ## ⚙️ Pengaturan Dasar CodeIgniter 4
-
-### 🔧 1. Konfigurasi Routes
+🔧 1. Konfigurasi Routes
 
 **File:** `app/Config/Routes.php`
 
@@ -58,6 +57,7 @@ Hilangkan tanda komentar (;) pada baris berikut untuk mengaktifkan ekstensi:
 ini
 extension=mysqli
 extension=intl
+
 
 
 
