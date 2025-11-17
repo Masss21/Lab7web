@@ -1,61 +1,47 @@
-# I.	PHP FRAMEWORK
+Praktikum I – PHP Framework (CodeIgniter 4)
+📌 Persiapan
 
-**I.	Praktikum I**
+Install XAMPP dan CodeIgniter 4
 
-Langkah Awal
+Buat folder proyek di:
 
-Download dan install XAMPP dan CodeIgniter 4.
-
-Buat folder baru bernama lab7_php_ci (opsional) di:
-
-C:/xampp/htdocs
+C:/xampp/htdocs/lab7_php_ci
 
 
-Ekstrak file CodeIgniter4 ke dalam folder tersebut.
+Ekstrak CodeIgniter ke dalam folder tersebut
 
-Mengatur Routes
+📌 Pengaturan Dasar CodeIgniter 4
+1. Mengatur Routes
 
-Buka file:
+Edit file:
 
 app/Config/Routes.php
 
 
-Tambahkan kode berikut:
+Tambahkan:
 
 $routes->get('/', 'Home::index');
 $routes->get('/about', 'Page::about');
 $routes->get('/contact', 'Page::contact');
 $routes->get('/faqs', 'Page::faqs');
 
-Mengaktifkan Ekstensi PHP pada XAMPP
+2. Mengaktifkan Ekstensi PHP di XAMPP
 
-Jalankan XAMPP, klik Admin pada bagian Apache.
+Buka:
 
-Klik Config → PHP.ini
+XAMPP → Apache → Config → PHP.ini
 
-Tekan CTRL + F lalu cari dan hilangkan tanda ; pada:
+
+Hilangkan tanda ; pada:
 
 extension=mysqli
 extension=intl
 
-Mengakses CI 4 Melalui Browser
+3. Mode Development
 
-Buka XAMPP Shell, lalu jalankan:
+Buka file:
 
-cd htdocs/lab11_php_ci
-
-
-Akses melalui browser:
-
-localhost:8080
-
-NOTE PENTING
-
-Ubah file .env:
-
-Lokasi:
-
-xampp/htdocs/lab11_php_ci/.env
+.env
 
 
 Ubah:
@@ -67,41 +53,9 @@ menjadi:
 
 CI_ENVIRONMENT = development
 
-Menambah Route Lagi
+📌 Membuat Controller “Page”
 
-Edit file:
-
-app/Config/Routes.php
-
-
-Tambahkan:
-
-$routes->get('/about', 'Page::about');
-$routes->get('/contact', 'Page::contact');
-$routes->get('/faqs', 'Page::faqs');
-
-Melihat Semua Routes di CLI
-
-Jalankan perintah berikut di XAMPP Shell:
-
-php spark routes
-
-Mengakses Route Baru
-
-Contoh:
-
-http://localhost:8080/about
-
-
-Jika muncul:
-
-Error 404 file not found
-
-maka controller belum dibuat.
-
-Membuat Controller Page
-
-Buat file baru:
+Buat file:
 
 app/Controllers/Page.php
 
@@ -109,151 +63,303 @@ app/Controllers/Page.php
 Isi:
 
 <?php
-
 namespace App\Controllers;
 
 class Page extends BaseController
 {
-    public function about()
-    {
-        echo "Ini halaman About";
-    }
-
-    public function contact()
-    {
-        echo "Ini halaman Contact";
-    }
-
-    public function faqs()
-    {
-        echo "Ini halaman FAQ";
-    }
+    public function about() { echo "Ini halaman About"; }
+    public function contact() { echo "Ini halaman Contact"; }
+    public function faqs() { echo "Ini halaman FAQ"; }
 }
 
-
-Reload browser dan halaman akan tampil.
-
-Autoroute CodeIgniter
-
-Autoroute default = aktif.
-
-Untuk menonaktifkan, buka:
-
-app/Config/Routes.php
-
-
-Ubah:
-
-$routes->setAutoRoute(true);
-
-Menambah Method Baru
-
-Pada Page.php:
-
-public function tos()
-{
-    echo "ini halaman Term of Services";
-}
-
-Membuat View
+📌 Membuat View Sederhana
 
 Buat file:
 
 app/Views/about.php
 
-
-Isi:
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
     <title><?= $title; ?></title>
 </head>
 <body>
     <h1><?= $title; ?></h1>
-    <hr>
     <p><?= $content; ?></p>
 </body>
 </html>
 
 
-Ubah controller:
+Controller di-update menjadi:
 
 public function about()
 {
     return view('about', [
         'title' => 'Halaman About',
-        'content' => 'Ini adalah halaman about yang menjelaskan tentang isi halaman ini.'
+        'content' => 'Ini adalah halaman tentang.'
     ]);
 }
 
-Menambahkan Layout Template
+📌 Membuat Template Header & Footer
 
-Pada CodeIgniter, asset CSS & JS disimpan di folder:
-
-public/
-
-
-Buat file:
-
-public/style.css
-
-
-Buat folder template:
+Folder:
 
 app/Views/template/
 
 header.php
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<title><?= $title; ?></title>
-<link rel="stylesheet" href="<?= base_url('/style.css');?>">
+    <title><?= $title; ?></title>
+    <link rel="stylesheet" href="<?= base_url('/style.css'); ?>">
 </head>
 <body>
-<div id="container">
-<header>
-<h1>Layout Sederhana</h1>
-</header>
+<header><h1>Layout Sederhana</h1></header>
 <nav>
-    <a href="<?= base_url('/');?>" class="active">Home</a>
-    <a href="<?= base_url('/artikel');?>">Artikel</a>
-    <a href="<?= base_url('/about');?>">About</a>
-    <a href="<?= base_url('/contact');?>">Kontak</a>
+    <a href="/">Home</a>
+    <a href="/artikel">Artikel</a>
+    <a href="/about">About</a>
+    <a href="/contact">Kontak</a>
 </nav>
 <section id="wrapper">
 <section id="main">
 
 footer.php
 </section>
-<aside id="sidebar">
-    <div class="widget-box">
-        <h3 class="title">Widget Header</h3>
-        <ul>
-            <li><a href="#">Widget Link</a></li>
-            <li><a href="#">Widget Link</a></li>
-        </ul>
-    </div>
-    <div class="widget-box">
-        <h3 class="title">Widget Text</h3>
-        <p>Vestibulum lorem elit, iaculis in nisl volutpat...</p>
-    </div>
-</aside>
+<aside id="sidebar">Sidebar</aside>
 </section>
-<footer>
-<p>&copy; 2021 - Universitas Pelita Bangsa</p>
-</footer>
-</div>
+<footer><p>&copy; 2021 - Universitas Pelita Bangsa</p></footer>
 </body>
 </html>
 
-about.php (menggunakan template)
-<?= $this->include('template/header'); ?>
+📌 Menambahkan CSS
 
-<h1><?= $title; ?></h1>
+File:
+
+public/style.css
+
+
+Isi sesuai kebutuhan (layout, nav, sidebar, widget).
+
+Praktikum – Framework Lanjutan
+📌 Membuat Database & Tabel Artikel
+CREATE DATABASE lab_ci4;
+USE lab_ci4;
+
+CREATE TABLE artikel (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    judul VARCHAR(200) NOT NULL,
+    isi TEXT,
+    gambar VARCHAR(200),
+    status TINYINT(1) DEFAULT 0,
+    slug VARCHAR(200)
+);
+
+📌 Model Artikel
+
+Buat file:
+
+app/Models/ArtikelModel.php
+
+<?php
+namespace App\Models;
+use CodeIgniter\Model;
+
+class ArtikelModel extends Model
+{
+    protected $table = 'artikel';
+    protected $primaryKey = 'id';
+    protected $allowedFields = ['judul','isi','status','slug','gambar'];
+}
+
+📌 Controller Artikel
+app/Controllers/Artikel.php
+
+public function index()
+{
+    $model = new ArtikelModel();
+    $artikel = $model->findAll();
+
+    return view('artikel/index', compact('artikel'));
+}
+
+📌 View Artikel
+
+Folder:
+
+app/Views/artikel/index.php
+
+<?php foreach($artikel as $row): ?>
+<h2><?= $row['judul']; ?></h2>
+<p><?= substr($row['isi'],0,200); ?></p>
 <hr>
-<p><?= $content; ?></p>
+<?php endforeach; ?>
 
-<?= $this->include('template/footer'); ?>
+📌 Menambahkan Routing Artikel
+$routes->get('/artikel', 'Artikel::index');
+$routes->get('/artikel/(:any)', 'Artikel::view/$1');
+
+📌 CRUD Admin Artikel
+1. Halaman Admin
+
+Controller:
+
+public function admin_index()
+{
+    $model = new ArtikelModel();
+    $artikel = $model->findAll();
+
+    return view('artikel/admin_index', compact('artikel'));
+}
+
+2. Tambah Artikel
+
+Controller:
+
+public function add()
+{
+    return view('artikel/form_add');
+}
+
+
+View form_add.php:
+
+<form method="post">
+<input type="text" name="judul">
+<textarea name="isi"></textarea>
+<input type="submit" value="Kirim">
+</form>
+
+3. Edit Artikel
+public function edit($id)
+{
+    $model = new ArtikelModel();
+    $data = $model->find($id);
+
+    return view('artikel/form_edit', compact('data'));
+}
+
+4. Delete Artikel
+public function delete($id)
+{
+    $model = new ArtikelModel();
+    $model->delete($id);
+
+    return redirect('admin/artikel');
+}
+
+Praktikum – Login System
+📌 Membuat Tabel User
+CREATE TABLE user (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(200),
+    useremail VARCHAR(200),
+    userpassword VARCHAR(200)
+);
+
+📌 Model User
+app/Models/UserModel.php
+
+class UserModel extends Model {
+    protected $table = 'user';
+    protected $allowedFields = ['username','useremail','userpassword'];
+}
+
+📌 Controller Login
+public function login()
+{
+    $email = $this->request->getPost('email');
+    $password = $this->request->getPost('password');
+}
+
+📌 Auth Filter
+app/Filters/Auth.php
+
+public function before()
+{
+    if (!session()->get('logged_in')) {
+        return redirect()->to('/user/login');
+    }
+}
+
+
+Tambahkan ke:
+
+app/Config/Filters.php
+
+Praktikum – Pagination & Search
+$artikel = $model->like('judul',$q)->paginate(10);
+$pager = $model->pager;
+
+Praktikum – Upload Gambar
+
+Controller:
+
+$file = $this->request->getFile('gambar');
+$file->move(ROOTPATH.'public/gambar');
+
+
+Form:
+
+<form method="post" enctype="multipart/form-data">
+<input type="file" name="gambar">
+
+Praktikum – Relasi Kategori
+Membuat tabel kategori:
+CREATE TABLE kategori (
+    id_kategori INT AUTO_INCREMENT PRIMARY KEY,
+    nama_kategori VARCHAR(100),
+    slug_kategori VARCHAR(100)
+);
+
+
+Relasi:
+
+ALTER TABLE artikel
+ADD COLUMN id_kategori INT,
+ADD CONSTRAINT fk_kategori
+FOREIGN KEY (id_kategori) REFERENCES kategori(id_kategori);
+
+Praktikum – AJAX CRUD (Ringkas)
+
+Controller:
+
+public function getData() { return $this->response->setJSON($data); }
+public function create() { … }
+public function update($id) { … }
+public function delete($id) { … }
+
+
+View:
+
+Menggunakan JavaScript Fetch / AJAX
+
+Menampilkan data tabel dinamis
+
+Edit, delete, upload gambar via AJAX
+
+📌 Penutup
+
+README ini berisi ringkasan lengkap seluruh proses praktikum, mulai dari:
+
+Instalasi CI4
+
+Routing
+
+Controller & View
+
+Template
+
+CRUD
+
+Login
+
+Pagination
+
+Upload Gambar
+
+Relasi Kategori
+
+AJAX CRUD
+
+Seluruh langkah mengikuti alur praktikum sesuai instruksi.
