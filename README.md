@@ -33,8 +33,9 @@ Buka:
 
 Hilangkan tanda:
 
-'''*;extension=mysqli
-;extension=intl*'''
+'''
+;extension=mysqli
+;extension=intl'''
 
 3. 🛠️ Mode Development
 
@@ -64,4 +65,5 @@ class Page extends BaseController
     public function contact() { echo "Ini halaman Contact"; }
     public function faqs() { echo "Ini halaman FAQ"; }
 }
+
 
